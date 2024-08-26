@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REMAJA LINGGA</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            background-image: url('https://via.placeholder.com/1920x600');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 50px;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: block;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .menu-toggle div {
+            width: 100%;
+            height: 4px;
+            background-color: white;
+            margin: 6px 0;
+            transition: all 0.3s;
+        }
+
+        nav {
+            display: none;
+            background-color: white;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            z-index: 1000;
+            width: 200px;
+            border-radius: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 10px;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        nav ul li a {
+            color: #4CAF50;
+            font-size: 18px;
+            text-decoration: none;
+            display: block;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #2c3e50;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 70px;
+            height: 4px;
+            background-color
+            display: block;
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        .about, .programs, .gallery, .contact, .timeline, .activities {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 60px;
+        }
+
+        .about img {
+            float: left;
+            margin-right: 30px;
+            border-radius: 10px;
+            width: 45%;
+        }
+
+        .about p {
+            text-align: justify;
+            line-height: 1.7;
+        }
+
+        .programs ul, .activities ul, .timeline ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .programs ul li, .activities ul li, .timeline ul li {
+            background-color: #e8f5e9;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .programs ul li img, .activities ul li img, .timeline ul li img {
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+
+        .programs ul li strong, .activities ul li strong, .timeline ul li strong {
+            font-size: 20px;
+            color: #388E3C;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .about img {
+                float: none;
+                display: block;
+                margin: 0 auto 20px;
+                width: 100%;
+            }
+            .programs ul li, .activities ul li, .timeline ul li {
+                flex-direction: column;
+                text-align: center;
+            }
+            .programs ul li img, .activities ul li img, .timeline ul li img {
+                margin: 0 0 15px 0;
+            }
+        }
+
+        /* Script untuk mengatur animasi hamburger menu */
+        .menu-toggle.active div:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .menu-toggle.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active div:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        nav.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>REMAJA LINGGA</h1>
+    <p>Muda, Peduli, Beraksi untuk Lingkungan</p>
+    <div class="menu-toggle">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#about">Tentang Kami</a></li>
+        <li><a href="#timeline">Linimasa</a></li>
+        <li><a href="#activities">Kegiatan</a></li>
+        <li><a href="#gallery">Galeri</a></li>
+        <li><a href="#contact">Kontak</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <section id="about" class="about">
+        <h2 class="section-title">Tentang Kami</h2>
+        <img src="https://via.placeholder.com/400x300" alt="Tentang REMAJA LINGGA">
+        <p>REMAJA LINGGA adalah organisasi pemuda yang fokus pada pengembangan kesadaran dan aksi lingkungan di kalangan generasi muda di Lingga. Kami percaya bahwa perubahan besar dimulai dari langkah kecil yang konsisten. Melalui program-program kami, kami berusaha untuk membangun generasi muda yang peduli, aktif, dan bertanggung jawab terhadap lingkungan sekitar.</p>
+    </section>
+
+    <section id="timeline" class="timeline">
+        <h2 class="section-title">Linimasa</h2>
+        <ul>
+            <li>
+                <img src="https://via.placeholder.com/60" alt="Linimasa 1">
+                <div>
+                    <strong>2024: Terbentuknya REMAJA LINGGA</strong> - Organisasi ini resmi dibentuk dengan tujuan untuk meningkatkan kesadaran lingkungan di kalangan pemuda.
+                </div>
+            </li>
+            <li>
+                <img src="https://via.placeholder.com/60" alt="Linimasa 2">
+                <div>
+                    <strong>2025: Program Penanaman Pohon</strong> - Dimulai program pertama kami untuk menanam pohon di area yang membutuhkan.
+                </div>
+            </li>
+            <!-- Tambahkan lebih banyak linimasa jika diperlukan -->
+        </ul>
+    </section>
+
+    <section id="activities" class="activities">
+        <h2 class="section-title">Kegiatan</h2>
+        <ul>
+            <li>
+                <img src="https://via.placeholder.com/60" alt="Kegiatan 1">
+                <div>
+                    <strong>Penanaman Pohon</strong> - Mengajak pemuda untuk aktif dalam kegiatan penghijauan dan penanaman pohon di area yang membutuhkan.
+                </div>
+            </li>
+            <li>
+                <img src="https://via.placeholder.com/60" alt="Kegiatan 2">
+                <div>
+                    <strong>Edukasi Lingkungan</strong> - Memberikan edukasi tentang pentingnya menjaga kelestarian lingkungan melalui seminar dan workshop.
+                </div>
+            </li>
+            <!-- Tambahkan lebih banyak kegiatan jika diperlukan -->
+        </ul>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2 class="section-title">Galeri</h2>
+        <img src="https://via.placeholder.com/600x400" alt="Galeri 1">
+        <img src="https://via.placeholder.com/600x400" alt="Galeri 2">
+        <!-- Tambahkan lebih banyak gambar jika diperlukan -->
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Kontak Kami</h2>
+        <p>Jika Anda memiliki pertanyaan atau ingin bergabung dengan REMAJA LINGGA, jangan ragu untuk menghubungi kami melalui saluran berikut:</p>
+        <p>Email: info@remajalingga.org</p>
+        <p>Telepon: +62 812 3456 7890</p>
+        <p>Alamat: Jl. Harmoni No.45, Lingga, Indonesia</p>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 REMAJA LINGGA. All rights reserved.</p>
+</footer>
+
+<script>
+    // Script untuk mengatur animasi dan tampilan menu hamburger
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+
+    // Script untuk auto-close menu setelah pilihan dipilih
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            nav.classList.remove('active');
+        });
+    });
+</script>
+
+</body>
+</html>
